@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin:0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        button{
+            width:100%;
+            height:100%;
+            margin: 20px;
+            padding: 20px;
+            background-color: red;
+            border: none;
+
+        }
+    </style>
+</head>
+<body>
+    <button id="meuBotao">Clique aqui</button>
+    <!-- Usando o evento mouseover e mouseout -->
+    <script>
+        // usando o mouseover
+        const botao = document.getElementById('meuBotao')
+        botao.addEventListener('mouseover', function (){
+            this.style.backgroundColor = 'orange';
+            console.log(botao);
+        })
+
+        // usando o mouseout
+
+        const botao_ = document.getElementById('meuBotao')
+        botao_.addEventListener('mouseout', function(){
+            this.style.backgroundColor = 'green';
+            console.log(botao_)
+        })
+
+
+        
+      
+        
+    </script>
+</body>
+</html>
