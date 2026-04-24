@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vlidacao de formulario</title>
+</head>
+<style>
+    body{
+        font-family: Arial, Helvetica, sans-serif;
+        margin: 20px;
+    }
+    input{
+        margin-top: 5px;
+        display: block;
+    }
+    .erro{
+        color: red;
+        font-size: 0.9em;
+        margin-top: 10px;
+    }
+    label{
+        margin-top: 20px;
+    }
+    button{
+        margin: 20px;
+    }
+</style>
+<body>
+    <h2>Cadastro simples</h2>
+    <form id="meuFormulario">
+        <label>Nome:</label>
+        <input type="text" id="nome" required>
+        <span id="erroNome" class="erro"></span>
+
+        <label>Email:</label>
+        <input type="email" id="email" required>
+        <span id="erroEmail" class="erro"></span>
+        <button type="submit">Enviar</button>
+    </form>
+    <script>
+        //Captura de elementos
+        const form = document.getElementById('meuFormulario');
+        const nome = document.getElementById('nome');
+        const email = document.getElementById('email');
+        const erroNome = document.getElementById('erroNome')
+        const erroEmail= document.getElementById('erroEmail')
+        
+        //Evento de input(validação em tempo real)
+        nome.addEventListener('input', ()=>{
+            if(nome.value.length < 5){
+                erroNome.textContent = 'nome deve ter pelo menos 5 caracteres'
+                
+            }else{
+                erroNome.textContent = ' ';
+                
+            }
+        });
+
+        // Evento blur (quando sai do campo)
+        
+        email.addEventListener('blur', () => {
+            if (!email.value.includes('@')){
+                erroEmail.textContent = 'Digite um email valido.'
+                this.style.backgroundColor = 'blue' 
+            }else{
+                erroEmail.textContent = ' ';
+            }
+        });
+
+        //Evento de submit (envio de formulario)
+        form.addEventListener('submit', (e) => {
+            e.preventDefault() //Evita envio automatico
+            if(!erroNome.textContent && !erroEmail.textContent){
+                alert(`Formulario enviado!\nNome: ${nome.value}\nEmail: ${email.value}`);
+                form.reset()
+            }else{
+                alert('corrija os erros antes de enviar.')
+            }
+        });
+
+
+    </script>
+</body>
+</html>
