@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>Validacao com JS</title>
+</head>
+<body>
+    <form action="#" autocomplete="off">
+        <h1>Form eventos em JavaScript</h1>
+        <div class="form-group">
+            <label for="username">Usuário</label>
+            <input type="text" id="username">
+        </div>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email">
+        </div>
+        <div class="form-group">
+            <label for="curso">Nome do curso</label>
+            <select  id="curso">
+                <option value="Java">Java</option>
+                <option value="Python">Python</option>
+                <option value="C++">C++</option>
+                <option value="MySQL">MySQL</option>
+                <option value="JavaScript">JavaScript</option>
+                <option value="PHP">PHP</option>
+                <option value="Node.js">Node.js</option>
+                <option value="Django">Django</option>
+                <option value="Express.js">Express.js</option>
+                
+            </select>
+        </div>
+        <div class="form-group">
+            <fieldset>
+                <legend>Género</legend>
+                <label><input type="radio" name="genero" value="Masculino">Masculino</label>
+                <label><input type="radio" name="genero" value="Femenino">Femenino</label>
+            </fieldset>
+        </div>
+        <input type="checkbox" id="agree" />
+        <label for="agree">Eu concordo com as condições.</label>
+        <div class="form-group">
+            <button type="submit">Enviar</button>
+            <button type="reset">Apagar</button>
+        </div>
+
+    </form>
+    <script src="index.js"></script>
+</body>
+</html>
