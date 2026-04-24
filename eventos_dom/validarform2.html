@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valida eventos simples</title>
+</head>
+<style>
+   
+</style>
+<body>
+    <form id="meuForm">
+        <input type="text" name="nome" id="nome" placeholder="Seu nome">
+        <button id="enviar" type="submit">Enviar</button>
+    </form>
+       
+    <script>
+         const form = document.getElementById('meuForm');
+         const nome = document.getElementById('nome');
+         const enviar = document.getElementById('enviar')
+
+         form.addEventListener('submit', function(evento){
+            evento.preventDefault() //Impede envio padrao
+            console.log('Dado enviado com sucesso!');
+            console.log('Nome:', nome.value)
+
+         });
+
+         nome.addEventListener('input', function(evento){
+            console.log('Digitando:', evento.target.value);
+            
+         });
+
+         nome.addEventListener('focus', function(){
+            nome.style.borderColor = 'orange'
+         })
+
+         nome.addEventListener('blur', function(){
+            nome.style.borderColor = 'orange'
+         })
+
+        
+
+    </script>
+</body>
+</html>
