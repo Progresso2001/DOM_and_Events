@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testando o textcontent</title>
+</head>
+<body>
+    <h1 id="teste">Testando o textcontent</h1>
+    <p id="meuTexto">Olá Mundo</p>
+
+    <script>
+        // Para obter o texto de um elemento
+        const p = document.getElementById('meuTexto')
+        console.log(p.textContent)
+
+        const h1 = document.querySelector('#teste')
+        console.log(h1.textContent)
+
+        // Para permitir alterar o texto de um elemento
+        p.textContent = "Como vai pessoal!"
+        console.log(p)
+    </script>
+</body>
+</html>
